@@ -29,4 +29,9 @@ public class Workers {
             throw new IllegalArgumentException("[ERROR] 같은 이름을 사용할 수 없습니다.");
         }
     }
+
+    public ArrayDeque<Worker> toQueue() {
+        ArrayDeque<Worker> queue = new ArrayDeque<>(workers);
+        return queue;
+    }
 }

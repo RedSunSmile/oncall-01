@@ -15,4 +15,7 @@ public class Worker {
         }
     }
 
+    public String takeName() {
+        return name;
+    }
 }
