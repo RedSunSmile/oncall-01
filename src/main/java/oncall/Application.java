@@ -5,8 +5,8 @@ import oncall.ui.InputView;
 public class Application {
     public static void main(String[] args) {
         InputView inputView = new InputView();
-        inputView.inputMonthAndStartDay();
-        inputView.inputWeekdayWorkers();
-        inputView.inputHolidayWorkers();
+        String monthAndStartDay=inputView.inputMonthAndStartDay();
+        String inputWeekdayWorkers=inputView.inputWeekdayWorkers();
+        String inputHolidayWorkers=inputView.inputHolidayWorkers();
     }
 }
