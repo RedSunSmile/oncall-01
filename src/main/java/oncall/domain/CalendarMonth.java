@@ -1,10 +1,10 @@
 package oncall.domain;
 
-public class MonthCalendar {
+public class CalendarMonth {
     private final int month;
     private final Day startDay;
 
-    public MonthCalendar(int month, Day startDay) {
+    public CalendarMonth(int month, Day startDay) {
         validateMonth(month);
         this.month = month;
         this.startDay = startDay;

@@ -33,7 +33,7 @@ public enum Day {
         Day[] days = values();
         for (int i = 0; i < days.length; i++) {
             if (days[i] == this) {
-                return days[(i+1)%days.length];
+                return days[(i + 1) % days.length];
             }
         }
         throw new IllegalStateException("[ERROR] 존재하지 않는 요일입니다.");
