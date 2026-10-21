@@ -26,12 +26,20 @@ public class Workers {
         Set<String> uniqueNames = new HashSet<>(names);
         boolean isDuplicated = uniqueNames.size() < names.size();
         if (isDuplicated) {
-            throw new IllegalArgumentException("[ERROR] 같은 이름을 사용할 수 없습니다.");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 입력 값입니다. 다시 입력해 주세요.");
         }
     }
 
     public ArrayDeque<Worker> toQueue() {
         ArrayDeque<Worker> queue = new ArrayDeque<>(workers);
         return queue;
+    }
+
+    public Set<String> takeNames() {
+        Set<String> names = new HashSet<>();
+        for (Worker worker : workers) {
+            names.add(worker.takeName());
+        }
+        return names;
     }
 }

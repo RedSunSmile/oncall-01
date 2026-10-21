@@ -1,12 +1,10 @@
 package oncall;
 
-import oncall.ui.InputView;
+import oncall.controller.OncallController;
 
 public class Application {
     public static void main(String[] args) {
-        InputView inputView = new InputView();
-        String monthAndStartDay=inputView.inputMonthAndStartDay();
-        String inputWeekdayWorkers=inputView.inputWeekdayWorkers();
-        String inputHolidayWorkers=inputView.inputHolidayWorkers();
+        OncallController oncallController=new OncallController();
+        oncallController.run();
     }
 }
