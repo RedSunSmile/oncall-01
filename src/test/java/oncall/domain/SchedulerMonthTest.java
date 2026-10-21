@@ -15,22 +15,22 @@ public class SchedulerMonthTest {
         Workers holidayWorkers = new Workers(List.of("수아", "루루", "글로", "솔로스타", "우코", "슬링키", "참새", "도리", "준팍", "도밥", "고니"));
         CalendarMonth monthCalendarMonth = new CalendarMonth(5, Day.월요일);
         SchedulerMonth schedulerMonth = new SchedulerMonth(monthCalendarMonth, workers, holidayWorkers);
-        List<String> result= schedulerMonth.assign();
+        List<String> result = schedulerMonth.assign();
 
-        assertThat(result.get(4)).isEqualTo( "루루");
-        assertThat(result.get(5)).isEqualTo( "수아");
+        assertThat(result.get(4)).isEqualTo("루루");
+        assertThat(result.get(5)).isEqualTo("수아");
     }
 
     @Test
     void 법정공휴일과_다음날_평일_연달아_같은_사람을_다른_사람으로_교체한다() {
 
-        Workers workers = new Workers(List.of("준팍", "도밥","수아", "루루", "글로", "솔로스타", "우코", "슬링키", "참새", "도리","고니"));
+        Workers workers = new Workers(List.of("준팍", "도밥", "수아", "루루", "글로", "솔로스타", "우코", "슬링키", "참새", "도리", "고니"));
         Workers holidayWorkers = new Workers(List.of("수아", "루루", "글로", "솔로스타", "우코", "슬링키", "참새", "도리", "준팍", "도밥", "고니"));
         CalendarMonth monthCalendarMonth = new CalendarMonth(10, Day.월요일);
         SchedulerMonth schedulerMonth = new SchedulerMonth(monthCalendarMonth, workers, holidayWorkers);
-        List<String> result= schedulerMonth.assign();
+        List<String> result = schedulerMonth.assign();
 
-        assertThat(result.get(3)).isEqualTo( "루루");
-        assertThat(result.get(4)).isEqualTo( "수아");
+        assertThat(result.get(3)).isEqualTo("루루");
+        assertThat(result.get(4)).isEqualTo("수아");
     }
 }
