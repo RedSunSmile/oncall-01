@@ -1,6 +1,7 @@
 package oncall.domain;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Workers {
     private final List<Worker> workers;
@@ -8,11 +9,9 @@ public class Workers {
     public Workers(List<String> names) {
         validatePossibleWorkersSize(names.size());
         validateNames(names);
-        this.workers = new ArrayList<>();
-        for (String name : names) {
-            Worker worker = new Worker(name);
-            workers.add(worker);
-        }
+        this.workers = names.stream()
+                .map(name -> new Worker(name))
+                .toList();
     }
 
     private void validatePossibleWorkersSize(int numbers) {
@@ -36,10 +35,8 @@ public class Workers {
     }
 
     public Set<String> takeNames() {
-        Set<String> names = new HashSet<>();
-        for (Worker worker : workers) {
-            names.add(worker.takeName());
-        }
-        return names;
+        return workers.stream()
+                .map(worker -> worker.takeName())
+                .collect(Collectors.toSet());
     }
 }

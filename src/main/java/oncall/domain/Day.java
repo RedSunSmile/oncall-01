@@ -1,5 +1,7 @@
 package oncall.domain;
 
+import java.util.Arrays;
+
 public enum Day {
 
     월요일("월"),
@@ -17,12 +19,10 @@ public enum Day {
     }
 
     public static Day from(String name) {
-        for (Day day : values()) {
-            if (day.name.equals(name)) {
-                return day;
-            }
-        }
-        throw new IllegalArgumentException("[ERROR] 존재하지 않는 요일입니다.");
+        return Arrays.stream(values())
+                .filter(day -> day.name.equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 요일입니다."));
     }
 
     public String takeName() {
