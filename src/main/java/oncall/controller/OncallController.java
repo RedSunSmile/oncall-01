@@ -3,11 +3,8 @@ package oncall.controller;
 import oncall.domain.*;
 import oncall.ui.InputView;
 import oncall.ui.OutputView;
-
-import java.util.ArrayDeque;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 public class OncallController {
     private final InputView inputView = new InputView();
